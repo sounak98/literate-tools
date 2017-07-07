@@ -17,10 +17,12 @@ PWD=$(shell pwd)
 STATUS=0
 
 all:
+	print
+
+print:
 	@echo "*********************************************************************************"
 	@echo ${ORG_MODE_DIR}
 	@echo "*********************************************************************************"
-	check-org build
 
 check-org:
 ifeq ($(wildcard ${ORG_MODE_DIR}/org-8.2.10/*),)
