@@ -4,8 +4,8 @@ BUILD_DIR=build
 VER_BRANCH=build-release
 VER_FILE=VERSION
 
-ORG_MODE_DIR=$HOME/emacs/lisp
-LITERATE_TOOLS="https://github.com/vlead/literate-tools.git"
+ORG_MODE_DIR=~/emacs/lisp
+LITERATE_TOOLS="https://github.com/sounak98/literate-tools.git"
 LITERATE_DIR=literate-tools
 ELISP_DIR=elisp
 ORG_DIR=org-templates
@@ -28,7 +28,6 @@ ifeq ($(wildcard ${ORG_MODE_DIR}/org-8.2.10/*),)
 else
 	@echo "org-mode org-8.2.10 already present"
 endif
-
 
 build: init write-version
 	emacs  --script elisp/publish.el
