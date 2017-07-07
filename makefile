@@ -28,6 +28,7 @@ ifeq ($(wildcard ${ORG_MODE_DIR}/org-8.2.10/*),)
 else
 	@echo "org-mode org-8.2.10 already present"
 endif
+	@echo $HOME
 
 
 build: init write-version
