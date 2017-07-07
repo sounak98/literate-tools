@@ -16,7 +16,11 @@ SRC_DIR=src
 PWD=$(shell pwd)
 STATUS=0
 
-all:  check-org build
+all:
+	@echo "*********************************************************************************"
+	@echo ${ORG_MODE_DIR}
+	@echo "*********************************************************************************"
+	check-org build
 
 check-org:
 ifeq ($(wildcard ${ORG_MODE_DIR}/org-8.2.10/*),)
