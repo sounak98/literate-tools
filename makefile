@@ -16,13 +16,7 @@ SRC_DIR=src
 PWD=$(shell pwd)
 STATUS=0
 
-all:
-	print
-
-print:
-	echo "*********************************************************************************" > /var/www/testfile
-	echo ${ORG_MODE_DIR} >> /var/www/testfile
-	echo "*********************************************************************************" >> /var/www/testfile
+all:  check-org build
 
 check-org:
 ifeq ($(wildcard ${ORG_MODE_DIR}/org-8.2.10/*),)
@@ -34,8 +28,6 @@ ifeq ($(wildcard ${ORG_MODE_DIR}/org-8.2.10/*),)
 else
 	@echo "org-mode org-8.2.10 already present"
 endif
-	@echo $HOME
-
 
 build: init write-version
 	emacs  --script elisp/publish.el
